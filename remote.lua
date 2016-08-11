@@ -6,9 +6,9 @@ local script = libs.script;
 local last_volume = 0;
 
 function get_volume()
-	volume = script.shell(
-		'amixer -c 0 get Master | grep -Eo "[0-9]+%" | tr -d "%" | head -1');
-	return tonumber(volume);
+	result = script.shell('amixer -c 0 get Master');
+	volume = tonumber(string.match(result, '(%d+)%%'));
+	return volume;
 end
 
 function set_volume(value)
