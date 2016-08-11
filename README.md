@@ -6,7 +6,6 @@ This is useful in situations where the media keys don't work.
 Same as the default Media remote.
 
 ## Requirements
-* Linux
 * ALSA with `amixer` command line utility
 
 ## Links
