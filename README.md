@@ -10,6 +10,6 @@ Same as the default Media remote.
 * ALSA with `amixer` command line utility
 
 ## Links
-* [Download](https://github.com/cifkao/unified-remote-media.git)
+* [Download](https://github.com/cifkao/unified-remote-media/archive/master.zip)
 * [How To Install a Custom Remote](https://www.unifiedremote.com/tutorials/how-to-install-a-custom-remote)
 * [GitHub](https://github.com/cifkao/unified-remote-media)
