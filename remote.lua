@@ -1,5 +1,4 @@
 
-local log = require("log");
 local keyboard = libs.keyboard;
 local script = libs.script;
 
@@ -12,7 +11,7 @@ function get_volume()
 end
 
 function set_volume(value)
-	os.script(string.format("amixer -c 0 sset Master %.2f%%", value));
+	os.script(string.format("amixer -c 0 sset Master %d%%", math.round(value)));
 end
 
 --@help Lower system volume
