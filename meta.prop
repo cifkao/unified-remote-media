@@ -1,0 +1,5 @@
+meta.name: Media (ALSA)
+meta.author: Ondrej Cifka
+meta.description: Media remote for the ALSA mixer.
+meta.tags.category: media
+meta.platform: linux
