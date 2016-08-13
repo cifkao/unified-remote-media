@@ -14,28 +14,45 @@ function set_volume(value)
 	os.script(string.format("amixer -c 0 sset Master %d%%", math.round(value)));
 end
 
+function mute()
+	last_volume = get_volume();
+	set_volume(0);
+end
+
+function unmute()
+	set_volume(last_volume);
+	last_volume = 0;
+end
+
+
 --@help Lower system volume
 actions.volume_down = function()
-	last_volume = get_volume();
-	set_volume(math.max(0, last_volume - 10));
+	volume = get_volume();
+	if volume > 0 then
+		last_volume = volume;
+		set_volume(math.max(0, last_volume - 10));
+	end
 end
 
 --@help Mute system volume
 actions.volume_mute = function()
 	volume = get_volume();
 	if volume <= 0 then
-		set_volume(last_volume);
-		last_volume = 0;
+		unmute();
 	else
-		last_volume = volume;
-		set_volume(0);
+		mute();
 	end
 end
 
 --@help Raise system volume
 actions.volume_up = function()
-	last_volume = get_volume();
-	set_volume(math.min(100, last_volume + 10));
+	volume = get_volume();
+	if volume <= 0 then
+		unmute();
+	else
+		last_volume = volume;
+		set_volume(math.min(100, last_volume + 10));
+	end
 end
 
 --@help Previous track
