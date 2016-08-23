@@ -2,6 +2,8 @@
 A Media remote that controls volume using the ALSA mixer rather than the media keys.
 This is useful in situations where the media keys don't work.
 
+![screenshot](screen.png)
+
 ## Features
 Same as the default Media remote.
 
